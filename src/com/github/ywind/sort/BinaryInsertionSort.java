@@ -1,22 +1,27 @@
 package com.github.ywind.sort;
-
-
 /**
  * @author Ywind E-mail:guoshukang@vip.qq.com
- * @version 创建时间：2015年7月6日 下午2:53:17
- * 
+ * @version 创建时间：2015年7月6日 下午8:39:20
+ * 类说明
  * 
  */
-public class InsertionSort {
+public class BinaryInsertionSort {
 	public static void sort(int[] a) {
 		for (int i = 1; i < a.length; i++) {
 			
-			int j=i-1;
-			while(a[i]<a[j]){
-				j--;
-				if(j==-1) break;
+			int hi=i;
+			int lo=0;
+			int mid=0;
+			while(lo<hi){
+				mid=(lo+hi)/2;
+				if(a[mid]>a[i])
+					hi=mid-1;
+				else if(a[mid]<a[i])
+					lo=mid+1;
+				else {lo=mid;break;};
 			}
-			for(int k=i;k>j+1;k--){
+
+			for(int k=i;k>lo;k--){
 				exch(a, k-1, k);
 			}
 		}
@@ -30,7 +35,7 @@ public class InsertionSort {
 	
 	public static void main(String[] args) {
 		
-		int[] a={5,7,9,3,4};
+		int[] a={5,7,9,3,4,5};
 		sort(a);
 		for (int i : a) {
 			System.out.println(i);

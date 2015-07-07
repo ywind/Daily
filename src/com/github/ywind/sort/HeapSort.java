@@ -2,8 +2,8 @@ package com.github.ywind.sort;
 /**
  * @author Ywind E-mail:guoshukang@vip.qq.com
  * @version 创建时间：2015年7月6日 下午3:04:00
- * 类说明
  * 
+ * 堆排序可以利用下沉或者上浮，类中都有写
  */
 public class HeapSort {
 	
